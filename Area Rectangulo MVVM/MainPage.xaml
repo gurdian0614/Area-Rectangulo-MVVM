@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Area_Rectangulo_MVVM.MainPage"
+             xmlns:viewModel="clr-namespace:Area_Rectangulo_MVVM.ViewModels">
+    <ContentPage.BindingContext>
+        <viewModel:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Ingrese Base:" />
+            <Entry Keyboard="Numeric" Text="{Binding Base}" />
+            <Label Text="Ingrese Altura:" />
+            <Entry Keyboard="Numeric" Text="{Binding Altura}" />
+            <Label Text="Resultado" />
+            <Entry Text="{Binding Resultado}" IsReadOnly="True" />
+            <Button Text="Calcular" Command="{Binding CalcularCommand}" />
+            <Button Text="Limpiar" Command="{Binding LimpiarCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
